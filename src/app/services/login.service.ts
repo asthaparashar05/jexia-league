@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { shareReplay, tap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
-import { projectURL, signInPath, signUpPath, User } from './';
+import { projectURL, signInPath, signUpPath} from './utils';
+import { User } from './model/user'
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,12 @@ export class LoginService {
     private http: HttpClient,
   ) { }
 
-  public signup(email, password: string): Observable<User>{
-    return this.http.post<User>(projectURL + signUpPath, { email, password });
+  public register(user: User): Observable<User>{
+    return this.http.post<User>(projectURL + signUpPath, { 'email': user.email, 'password': user.password });
   }
 
-  public login(email, password: string): Observable<any> {
-    var request = { 'method': 'ums', email, password }
+  public login(user: User): Observable<any> {
+    var request = { 'method': 'ums', 'email': user.email, 'password': user.password }
     return this.http.post(projectURL + signInPath, request)
       .pipe(tap(tokens => this.storeTokens(tokens)));
   }

@@ -1,3 +1,41 @@
-<p>
-  login works!
-</p>
+<form #f="ngForm">
+  <div class="form-fields">
+    <mat-form-field class="input-group layout-row">
+      <input matInput
+             name="email"
+             [(ngModel)]="user.email"
+             placeholder="Email"
+             type="email"
+             [email]="true"
+             #email="ngModel"
+             required
+             id="login-email-field">
+      <mat-error align="end"
+                 *ngIf="!email.valid"
+                 id="login-email-field-error">
+        Oops, email address seems invalid. Please try again.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="input-group layout-row">
+      <input matInput
+        name="password"
+        [(ngModel)]="user.password"
+        placeholder="Password"
+        type="password"
+        required
+        id="login-password-field">
+    </mat-form-field>
+  </div>
+  <div class="links flex layout-align-space-between-center">
+    <button class="btn-submit"
+            [disabled]="disabled"
+            [class.working]="disabled"
+            (click)="login()"
+            mat-raised-button
+            color="primary"
+            id="login-access-button">
+      <span *ngIf="!disabled">Login</span>
+    </button>
+  </div>
+</form>
