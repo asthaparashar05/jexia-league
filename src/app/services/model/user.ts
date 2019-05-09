@@ -1,11 +1,5 @@
 export interface User {
-  /**
-   * User's Email ID
-   * */
-  email: string;
-  /**
-   * User's Password
-   * */
-  password: string;
-
+    name: string;
+    email: string;
+    password: string;
 }

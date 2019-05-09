@@ -1,56 +1,33 @@
-  <div>
-    <jexia-card-title [titleParts]="['sign', 'up']" id="sign-up-subtitle-text"></jexia-card-title>
-    <p id="sign-up-hint-text">You are only one step away to get started, so let's fill your credentials and create an account!</p>
-    <div *ngIf="errorMessage"
-        class="alert alert-error"
-        role="alert"
-        id="sign-up-error-message">{{errorMessage}}</div>
-    <form [formGroup]="userRegisterForm">
-      <div class="form-fields">
-        <mat-form-field class="input-group layout-row">
-          <input matInput
-                autocomplete="off"
-                name="register_email"
-                formControlName="email"
-                placeholder="Email"
-                type="email">
-            <mat-error>
-              <span *ngIf="emailControl.errors?.required">Email address is required.</span>
-              <span *ngIf="emailControl.errors?.email && !emailControl.errors.required">Oops, email address seems invalid. Please try again.</span>
-              <span *ngIf="emailControl.errors?.exists">{{emailControl.getError('exists')}}</span>
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field class="input-group layout-row">
-          <input matInput
-                autocomplete="off"
-                name="register_password"
-                formControlName="password"
-                placeholder="Password"
-                type="password">
-          <mat-error>
-              <span *ngIf="passwordControl.errors?.pattern">Password cannot have only space(s).</span>
-              <span *ngIf="passwordControl.errors?.required">Password is required</span>
-            </mat-error>
-        </mat-form-field>
-      </div>
+<div class="register">
+  <h2 class="register-header">Register</h2>
+  <form #myform="ngForm" [formGroup]="registerForm" class="register-container" (ngSubmit)="register(myform)">
 
-      <div class="sign-up-form-controls links flex layout-align-space-between-center">
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.name.errors }">
+      <input type="name" placeholder="Name" formControlName="name">
+    </p>
 
-        <div class="form-button">
-          <button disableRipple="true"
-                  class="btn-submit"
-                  [disabled]="isSubmitDisabled"
-                  [class.working]="submitted"
-                  (click)="register()"
-                  mat-raised-button
-                  color="primary"
-                  id="sign-up-create-account">
-            <mat-spinner *ngIf="submitted"
-                        class="btn-spinner"
-                        [diameter]="30" [strokeWidth]="2"></mat-spinner>
-            <span *ngIf="!submitted">Create account</span>
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
+    <div *ngIf="isSubmitted && formControls.name.errors" class="help-block">
+      <div *ngIf="formControls.name.errors.required">Name is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+      <input type="email" placeholder="Email" formControlName="email">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+      <div *ngIf="formControls.email.errors.required">Email is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+      <input type="password" placeholder="Password" formControlName="password">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+      <div *ngIf="formControls.password.errors.required">Password is required</div>
+    </div>
+
+    <p>
+      <input type="submit" value="Register">
+    </p>
+  </form>
+</div>
