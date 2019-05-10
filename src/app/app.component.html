@@ -1,15 +1,17 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<div id="wrap">
+  <div class="Background">
+    <div class="Path-1">
+        <div class="The-Office-League">The Office League</div>
+        <a routerLink="/" routerLinkActive="active" class="About">About </a>
+        <a routerLink="/login" routerLinkActive="active" class="Support">Support </a>
+        <div class="Rectangle-377"><a routerLink="/register" routerLinkActive="active" class="Sign-Up">Sign-Up </a></div>
+    </div>
+
+    <div class="Content-background">
+        <p class="Login">Login</p>
+        <p style="text-align: center;">Please login or sign-up</p>
+        <router-outlet></router-outlet>
+      </div>
+  </div>
 </div>
-<h2>Please login or sign-up</h2>
-
-<nav>
-  <a routerLink="/" routerLinkActive="active">Home </a>
-  <a routerLink="/login" routerLinkActive="active">Login </a>
-  <a routerLink="/register" routerLinkActive="active">Register </a>
-  <a routerLink="/contact" routerLinkActive="active">Contact </a>
-</nav>
-
-<router-outlet></router-outlet>
