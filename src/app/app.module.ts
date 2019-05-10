@@ -14,6 +14,54 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TeamsProfilesComponent } from './components/teams-profiles/teams-profiles.component';
 import { PlayersComponent } from './components/players/players.component';
+import {
+  MatRippleModule,
+  MatInputModule,
+  MatGridListModule,
+  MatSlideToggleModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatCheckboxModule,
+  MatSidenavModule,
+  MatCardModule,
+  MatListModule,
+  MatSnackBarModule,
+  MatDialogModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatTooltipModule,
+  MatTabsModule,
+  MatProgressBarModule,
+  MatChipsModule,
+  MatToolbarModule,
+} from '@angular/material';
+
+export const MatModules = [
+  MatRippleModule,
+  MatInputModule,
+  MatGridListModule,
+  MatSlideToggleModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatCheckboxModule,
+  MatSidenavModule,
+  MatCardModule,
+  MatListModule,
+  MatSnackBarModule,
+  MatDialogModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatTooltipModule,
+  MatTabsModule,
+  MatProgressBarModule,
+  MatChipsModule,
+  MatFormFieldModule,
+  MatToolbarModule,
+];
 
 @NgModule({
   declarations: [
@@ -31,6 +79,7 @@ import { PlayersComponent } from './components/players/players.component';
     FormsModule,
     HttpClientModule,
     MatFormFieldModule,
+    MatModules,
     ReactiveFormsModule,
   ],
   providers: [

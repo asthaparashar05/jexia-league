@@ -1,3 +1,23 @@
 <p>
-  players works!
+  <input type="text" placeholder="Name" [(ngModel)]="playerProfile.name">
 </p>
+
+<p>
+  <mat-checkbox [(ngModel)]="playerProfile.foosball.is_playing">
+    foosball
+  </mat-checkbox>
+  <mat-checkbox [(ngModel)]="playerProfile.carRacing.is_playing">
+    car
+  </mat-checkbox>
+  <mat-checkbox [(ngModel)]="playerProfile.tableTennis.is_playing">
+    table tennis
+  </mat-checkbox>
+</p>
+
+<button class="btn-submit"
+            (click)="createPlayer()"
+            mat-raised-button
+            color="primary"
+            id="login-access-button">
+            create
+    </button>

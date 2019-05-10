@@ -6,14 +6,13 @@ import { AuthGuard } from './services/auth/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { PlayersComponent } from './components/players/players.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    // { path: 'sports', component: SportsComponent, canActivate: [AuthGuard] },
-    { path: 'sports', children: [
-    ] },
+    { path: 'player', component: PlayersComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '/404' }
