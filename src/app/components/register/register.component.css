@@ -1,85 +1,119 @@
 /* 'Open Sans' font from Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-
-.register {
-  width: 400px;
-  margin: 16px auto;
-  font-size: 16px;
-}
-
-.register-header,
-.register p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.register-triangle {
-  width: 0;
-  margin-right: auto;
-  margin-left: auto;
-  border: 12px solid transparent;
-  border-bottom-color: rgb(15, 66, 107);
-}
-
-.register-header {
-  background: rgb(12, 77, 129);
-  padding: 20px;
-  font-size: 1.4em;
-  font-weight: normal;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.register-container {
-  background: #ebebeb;
-  padding: 12px;
-}
-
-.register p {
-  padding: 12px;
-}
-
-.register input {
-  box-sizing: border-box;
-  display: block;
+.Login {
   width: 100%;
-  border-width: 1px;
-  border-style: solid;
-  padding: 16px;
-  outline: 0;
-  font-family: inherit;
-  font-size: 0.95em;
+  height: 58px;
+  padding-top: 40px;
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.04;
+  letter-spacing: normal;
+  text-align: center;
+  color: #5300ca;
 }
 
-.register input[type="email"],
-.register input[type="password"] {
-  background: #fff;
-  border-color: #bbb;
-  color: #555;
+.login-container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 400px;
 }
 
-.register input[type="email"]:focus,
-.register input[type="password"]:focus {
+input {
+  width: 450px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: rgba(33, 33, 33, 0.05) !important;
+  margin-left: 300px !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: 1.19 !important;
+  letter-spacing: normal !important;
+  text-align: left !important;
+  color: rgba(33, 33, 33, 0.5) !important;
+}
+
+input:-internal-autofill-selected {
+  width: 450px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: rgba(33, 33, 33, 0.05) !important;
+  margin-left: 300px !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: 1.19 !important;
+  letter-spacing: normal !important;
+  text-align: left !important;
+  color: rgba(33, 33, 33, 0.5) !important;
+}
+
+input[_ngcontent-phm-c1]:-internal-autofill-selected {
+  width: 450px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: rgba(33, 33, 33, 0.05);
+}
+
+.login input[type="name"]:focus,
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
   border-color: #888;
 }
 
-.register input[type="submit"] {
-  background: rgb(1, 29, 51);
-  border-color: transparent;
-  color: #fff;
-  cursor: pointer;
+.LoginBtn {
+  width: 91px !important;
+  height: 36px !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: 1.25 !important;
+  letter-spacing: normal !important;
+  margin-left: 662px !important;
+  text-align: center !important;
+  background-color: rgba(83, 0, 202, 0.05);
+  color: rgba(83, 0, 202, 0.75);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  cursor: pointer !important;
 }
 
-.register input[type="submit"]:hover {
+.login input[type="submit"] {
+  width: 48px !important;
+  height: 19px !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: 1.25 !important;
+  letter-spacing: normal !important;
+  margin-left: 300px !important;
+  text-align: center !important;
+  color: rgba(83, 0, 202, 0.75) !important;
+  cursor: pointer !important;
+}
+
+.login input[type="submit"]:hover {
   background: #17c;
 }
 
-.register input[type="submit"]:focus {
+.login input[type="submit"]:focus {
   border-color: #05a;
 }
 
+.has-error input[type="name"],
 .has-error input[type="email"],
 .has-error input[type="password"] {
     border-color: rgb(216, 12, 12);

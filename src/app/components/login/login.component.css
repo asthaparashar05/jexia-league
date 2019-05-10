@@ -1,63 +1,50 @@
 /* 'Open Sans' font from Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-
-.login {
-  width: 400px;
-  margin: 16px auto;
-  font-size: 16px;
-}
-
-.login-header,
-.login p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.login-triangle {
-  width: 0;
-  margin-right: auto;
-  margin-left: auto;
-  border: 12px solid transparent;
-  border-bottom-color: rgb(15, 66, 107);
-}
-
-.login-header {
-  background: rgb(12, 77, 129);
-  padding: 20px;
-  font-size: 1.4em;
-  font-weight: normal;
+.Login {
+  width: 100%;
+  height: 58px;
+  padding-top: 40px;
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.04;
+  letter-spacing: normal;
   text-align: center;
-  text-transform: uppercase;
-  color: #fff;
+  color: #5300ca;
 }
 
 .login-container {
-  background: #ebebeb;
-  padding: 12px;
-}
-
-.login p {
-  padding: 12px;
-}
-
-.login input {
-  box-sizing: border-box;
-  display: block;
   width: 100%;
-  border-width: 1px;
-  border-style: solid;
-  padding: 16px;
-  outline: 0;
-  font-family: inherit;
-  font-size: 0.95em;
+  margin: 0 auto;
+  padding-left: 400px;
 }
 
-.login input[type="email"],
-.login input[type="password"] {
-  background: #fff;
-  border-color: #bbb;
-  color: #555;
+input:-internal-autofill-selected {
+  width: 450px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: rgba(33, 33, 33, 0.05) !important;
+  margin-left: -70px !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: 1.19 !important;
+  letter-spacing: normal !important;
+  text-align: left !important;
+  color: rgba(33, 33, 33, 0.5) !important;
+}
+
+input[_ngcontent-phm-c1]:-internal-autofill-selected {
+  width: 450px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: rgba(33, 33, 33, 0.05);
 }
 
 .login input[type="email"]:focus,
@@ -65,11 +52,39 @@
   border-color: #888;
 }
 
+.LoginBtn {
+  width: 91px !important;
+  height: 36px !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: 1.25 !important;
+  letter-spacing: normal !important;
+  margin-left: 292px !important;
+  text-align: center !important;
+  background-color: rgba(83, 0, 202, 0.05);
+  color: rgba(83, 0, 202, 0.75);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  cursor: pointer !important;
+}
+
 .login input[type="submit"] {
-  background: rgb(1, 29, 51);
-  border-color: transparent;
-  color: #fff;
-  cursor: pointer;
+  width: 48px !important;
+  height: 19px !important;
+  font-family: Montserrat !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: 1.25 !important;
+  letter-spacing: normal !important;
+  margin-left: 300px !important;
+  text-align: center !important;
+  color: rgba(83, 0, 202, 0.75) !important;
+  cursor: pointer !important;
 }
 
 .login input[type="submit"]:hover {

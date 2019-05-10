@@ -1,14 +1,14 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div id="wrap">
+  <div class="Background">
+    <div class="Path-1">
+        <div class="The-Office-League">The Office League</div>
+        <a routerLink="/" routerLinkActive="active" class="About">About </a>
+        <a routerLink="/login" routerLinkActive="active" class="Support">Log-In </a>
+        <div class="Rectangle-377"><a routerLink="/register" routerLinkActive="active" class="Sign-Up">Sign-Up </a></div>
+    </div>
+
+    <div class="Content-background">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
 </div>
-<h2>Please login or sign-up</h2>
-
-<nav>
-  <a routerLink="/" routerLinkActive="active">Home </a>
-  <a routerLink="/login" routerLinkActive="active">Login </a>
-  <a routerLink="/register" routerLinkActive="active">Register </a>
-</nav>
-
-<router-outlet></router-outlet>

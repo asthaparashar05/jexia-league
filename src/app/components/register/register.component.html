@@ -1,3 +1,31 @@
+<p class="Login">Create Account</p>
+
+<form #myform="ngForm" [formGroup]="registerForm" class="register-container" (ngSubmit)="register(myform)">
+  
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+        <input type="email" placeholder="Email" formControlName="email">
+      </p>
+  
+      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <div *ngIf="formControls.email.errors.required">Email is required</div>
+      </div>
+  
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="password" placeholder="Password" formControlName="password">
+      </p>
+  
+      <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+        <div *ngIf="formControls.password.errors.required">Password is required</div>
+      </div>
+  
+  <p>
+    <input type="submit" value="Sign-Up" class="LoginBtn">
+  </p>
+</form>
+
+
+
+<!--
 <div class="register">
   <h2 class="register-header">Register</h2>
   <form #myform="ngForm" [formGroup]="registerForm" class="register-container" (ngSubmit)="register(myform)">
@@ -22,3 +50,4 @@
     </p>
   </form>
 </div>
+-->
