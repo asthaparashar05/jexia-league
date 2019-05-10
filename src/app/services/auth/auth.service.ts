@@ -11,7 +11,7 @@ import { User } from  '../model/user';
 import { Users } from  '../model/users';
 import { Record } from  '../model/record';
 
-import { projectDataset, signInPath, signUpPath, usersDataset } from  '../utils';
+import { gamesDataset, projectDataset, signInPath, signUpPath, usersDataset } from  '../utils';
 import { consumptionMethod, consumptionKey, consumptionSecret } from  '../back-end';
 
 @Injectable({
@@ -62,6 +62,19 @@ console.log(res);
     );
   }
 
+  public checkUser(userInfo): Observable<Users> {
+    return this.httpClient.get<Users>(`${usersDataset}?email=${userInfo.email}`, {
+      headers: {'Authorization':this.authToken} }
+    ).pipe(
+      tap((res:  Users ) => {
+console.log(res);
+        if (res.id) {
+          this.projectId = res.project;
+        };
+      })
+    );
+  }
+
   public getAuthToken(): Observable<Token> {
     var authParams = {
       method: consumptionMethod,
@@ -79,19 +92,33 @@ console.log(res);
     );
   }
 
+  public getGames(): Observable<Record> {
+    return this.httpClient.get<Record>(`${gamesDataset}`, {
+      headers: {'Authorization':this.authToken} }
+    ).pipe(
+      tap((res:  Record ) => {
+console.log(res);
+      })
+    );
+  }
+
   public isLoggedIn(){
     // return localStorage.getItem('ACCESS_TOKEN') !== null;
     return  this.authSubject.asObservable();
   }
 
   public login(userInfo: User): Observable<Ums> {
-    return this.httpClient.post(`${signInPath}`, userInfo).pipe(
-      tap(async (res: Ums ) => {
+    var signinParams = {
+      email: userInfo.email,
+      password: userInfo.password
+    };
+
+    return this.httpClient.post<Ums>(`${signUpPath}`, signinParams ).pipe(
+      tap((res:  Ums ) => {
+console.log(res);
         if (res.id) {
-          localStorage.setItem('ACCESS_TOKEN', "access_token");
-          // localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
-          this.authSubject.next(true);
-        }
+          this.userId = res.id;
+        };
       })
     );
   }

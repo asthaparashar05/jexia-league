@@ -33,9 +33,28 @@ export class LoginComponent implements OnInit {
 
   login(form){
     this.authService.login(form.value).subscribe((res)=>{
-      console.log("Logged in!");
-      // this.router.navigateByUrl('sports');
+      if(!res) {
+        return false;
+      }
+    });
+
+    this.authService.getAuthToken().subscribe((res) => {
+      if(!res) {
+        return false;
+      }
+    });
+ 
+    this.authService.checkUser(form.value).subscribe((res)=>{
+      if (res) {
+      this.router.navigateByUrl('sports');
+      } else {
+      this.router.navigateByUrl('user_profile');
+      }
     });    
+
+    // localStorage.setItem('ACCESS_TOKEN', "access_token");
+    // this.authSubject.next(true);
+
 
     // this.isSubmitted = true;
     // if(this.loginForm.invalid){

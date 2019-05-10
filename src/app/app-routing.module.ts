@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './services/auth/auth.guard';
 
 import { ContactComponent } from './components/contact/contact.component';
+import { FoosballComponent } from './components/foosball/foosball.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -14,7 +15,11 @@ const appRoutes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'sports', canActivate: [AuthGuard], component: SportsComponent },
+    // { path: 'sports', component: SportsComponent, canActivate: [AuthGuard] },
+    { path: 'sports', children: [
+      { path: '', component: SportsComponent },
+      { path: 'foosball', component: FoosballComponent }
+    ] },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '/404' }

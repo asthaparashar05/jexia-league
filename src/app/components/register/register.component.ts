@@ -2,6 +2,8 @@ import { Component, OnInit, Input, ViewChild, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
 import { Router } from  '@angular/router';
 
+import { Observable, BehaviorSubject } from  'rxjs';
+
 import { User } from  '../../services/model/user';
 import { Users } from  '../../services/model/users';
 import { Project } from  '../../services/model/project';
@@ -16,6 +18,7 @@ import { AuthService } from  '../../services/auth/auth.service';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   isSubmitted  =  false;
+  authSubject  =  new  BehaviorSubject(false);
 
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder ) { }
 
@@ -55,6 +58,8 @@ export class RegisterComponent implements OnInit {
     });
 
     if (this.authService.authToken && this.authService.projectId && this.authService.userId) {
+      localStorage.setItem('ACCESS_TOKEN', this.authService.authToken);
+      this.authSubject.next(true);
       this.router.navigateByUrl('sports');
     }
   }

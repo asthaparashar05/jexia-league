@@ -2,5 +2,6 @@ export const projectURL = 'https://8e8f83fa-48e5-46ea-8037-3917c0450383.app.jexi
 export const signUpPath = '/ums/signup';
 export const signInPath = '/auth';
 
+export const gamesDataset = '/ds/Games';
 export const projectDataset = '/ds/Project';
 export const usersDataset = '/ds/Users';
