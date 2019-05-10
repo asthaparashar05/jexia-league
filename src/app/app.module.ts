@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TeamsProfilesComponent } from './components/teams-profiles/teams-profiles.component';
+import { PlayersComponent } from './components/players/players.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TeamsProfilesComponent } from './components/teams-profiles/teams-profil
     LoginComponent,
     RegisterComponent,
     TeamsProfilesComponent,
+    PlayersComponent,
   ],
   imports: [
     AppRoutingModule,

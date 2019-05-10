@@ -5,6 +5,11 @@ import { TableTennis } from './table-tennis';
 export interface Player {
     id: string;
     name: string;
+}
+
+export interface PlayerWithGames {
+    id: string;
+    name: string;
     foosball: Foosball;
     carRacing: CarRacing;
     tableTennis: TableTennis;
