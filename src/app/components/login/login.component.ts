@@ -1,14 +1,11 @@
 import { Component, OnInit, Input, ViewChild, } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
-import { Router } from  '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
-import { Observable, BehaviorSubject } from  'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-import { AuthService } from  '../../services/auth/auth.service';
-import { Ums } from  '../../services/model/ums';
-import { User } from  '../../services/model/user';
-import { Users } from  '../../services/model/users';
-import { Project } from  '../../services/model/project';
+import { AuthService } from '../../services/auth/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -31,37 +28,12 @@ export class LoginComponent implements OnInit {
 
   get formControls() { return this.loginForm.controls; }
 
-  login(form){
-    this.authService.login(form.value).subscribe((res)=>{
-      if(!res) {
+  login(form) {
+    this.authService.login(form.value).subscribe((res) => {
+      if (!res) {
         return false;
       }
     });
-
-    this.authService.getAuthToken().subscribe((res) => {
-      if(!res) {
-        return false;
-      }
-    });
- 
-    this.authService.checkUser(form.value).subscribe((res)=>{
-      if (res) {
-      this.router.navigateByUrl('sports');
-      } else {
-      this.router.navigateByUrl('user_profile');
-      }
-    });    
-
-    // localStorage.setItem('ACCESS_TOKEN', "access_token");
-    // this.authSubject.next(true);
-
-
-    // this.isSubmitted = true;
-    // if(this.loginForm.invalid){
-    //   return;
-    // }
-    // this.authService.login(this.loginForm.value);
-    // this.router.navigateByUrl('/sports');
   }
 }
 

@@ -1,3 +1,3 @@
 export const consumptionMethod = 'apk';
-export const consumptionKey = '73d99420-cc17-462b-a48e-3f744769ed72';
-export const consumptionSecret = 'OndT/WnEveHW4mMmNW3XpFg01PfAkBLrVSV8lay3W359XKiixiwPHqIBK7SjBUxr3Jku448PPtuITYUq9IP3GA==';
+export const consumptionKey = 'ef66cb62-3166-4fe4-93be-4008b34ab1dd';
+export const consumptionSecret = 'QtndW8bOQYTKj3y7h9Ry5GCJL+2EThgTb0XB7UGbQcpOtzHMumj+lmWLFAOHrrWqpjWzQqeApTnDCSqa23TjNQ==';
