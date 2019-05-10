@@ -30,16 +30,32 @@ export class RegisterComponent implements OnInit {
   get formControls() { return this.registerForm.controls; }
 
   register(form){
-    this.authService.register(form.value).subscribe((res) => {
-console.log(res);
-      // this.router.navigateByUrl('login');
+    this.authService.signUp(form.value).subscribe((res) => {
+      if(!res) {
+        return false;
+      }
     });
 
-    // this.isSubmitted = true;
-    // if(this.registerForm.invalid){
-    //   return;
-    // }
-    // this.authService.register(this.registerForm.value);
-    // this.router.navigateByUrl('/login');
+    this.authService.getAuthToken().subscribe((res) => {
+      if(!res) {
+        return false;
+      }
+    });
+ 
+    this.authService.addProject(form.value.name).subscribe((res) => {
+      if(!res) {
+        return false;
+      }
+    });
+ 
+    this.authService.addUser(form.value).subscribe((res) => {
+      if(!res) {
+        return false;
+      }
+    });
+
+    if (this.authService.authToken && this.authService.projectId && this.authService.userId) {
+      this.router.navigateByUrl('sports');
+    }
   }
 }

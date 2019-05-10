@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   get formControls() { return this.loginForm.controls; }
 
   login(form){
-    this.authService.register(form.value).subscribe((res)=>{
+    this.authService.login(form.value).subscribe((res)=>{
       console.log("Logged in!");
       // this.router.navigateByUrl('sports');
     });    
